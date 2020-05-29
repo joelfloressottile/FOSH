@@ -1,0 +1,47 @@
+mat-sidenav-container{
+    height: 100%;
+    overflow:hidden;
+}
+
+mat-sidenav, mat-sidenav-content{
+    padding:16px;
+}
+
+mat-sidenav {
+    background-color: lightgrey;
+    width:200px;
+}
+
+mat-nav-list{
+    .mat-list-item-content{
+        padding:0px !important;
+    }
+}
+
+::ng-deep .mat-list-item-content:hover{
+    background-color:rgba(255, 255, 255, 0.226);
+    transition:0.3s;
+}
+
+
+::ng-deep mat-sidenav{
+    padding:0px !important;
+}
+
+::ng-deep .mat-list-item-content{
+    padding:5px !important;
+}
+
+.logo-container{
+    text-align: center;
+}
+
+.bg-dark-color{
+    background-color: #070A1D;
+}
+
+.nav-link-white{
+    color:white;
+}
+
+

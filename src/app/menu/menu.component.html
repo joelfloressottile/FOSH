@@ -1,0 +1,22 @@
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav [(opened)]="opened" mode="side" class="bg-dark-color">
+        <!-- <h1 class="bg-primary" class="px-2 pt-1" style="text-align: center;"> Menú </h1> -->
+        <div class="logo-container">
+            <img src="/assets/img/cclogo.png">
+        </div>
+        <mat-nav-list>
+            <div class="sidenav-items-wrapper">
+                <a mat-list-item [routerLink]="nav.route" *ngFor="let nav of menuNav" class="nav-link-white">
+                    <mat-icon class="mr-2" color="primary">{{nav.icon}}</mat-icon>
+                    {{nav.name}}
+                </a>
+            </div>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content style="padding:0px;">
+        <button mat-icon-button (click)='sidenav.toggle()' primary>
+            <mat-icon color="black" style="color:black;">{{sidenav.opened ? 'close' : 'menu'}}</mat-icon>
+        </button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,142 @@
+
+body{
+    background-color: black;
+}
+
+input{
+    color:white;
+}
+
+#wrapper { 
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),  url('/assets/img/doctor-with-patient.jpg');
+    filter:blur(3px);
+    
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+#login-form{
+    z-index: 10;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.mat-card{
+    background: #24242499;
+    border: 1px solid rgba(255, 255, 255, 0.438);
+}
+
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-button-box{
+    text-align:center;
+    margin-top:20px;
+}
+
+.wide-button{
+    width:100%;
+}
+
+.mat-raised-button:hover{
+    background-color:rgba(43, 171, 221, 0.973);
+    color:white;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: rgba(223, 223, 223, 0.22);
+}
+
+.login-button-box > button{
+}
+
+.show-pass{
+    font-size:20px !important;
+}
+
+.welcome-text{
+    text-align:center;
+}
+
+.mat-card{
+    width:300px;
+}
+
+.mat-form-field{
+    width:100%;
+    margin-bottom:20px;
+}
+
+.mat-form-field-appearance-fill .mat-form-field-flex{
+ background-color: rgb(71, 71, 71) !important;
+}
+
+
+.mat-raised-button{
+    background: #3498dbb0;
+}
+
+.button-disabled{
+    color: gray !important;
+    border: 1px solid gray;
+}
+
+.warning-colour{
+    background:rgb(208, 221, 93)
+}
+
+
+// mat-icon-stepper selected color change 
+::ng-deep .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: white!important;
+}
+
+//input outline color
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white !important;
+    // opacity: 1!important;
+}
+
+//mat-input focused color
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: white!important;
+}
+
+// mat-input error outline color
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-invalid.mat-form-field-invalid .mat-form-field-outline-thick{
+    color: white!important;
+    opacity: 0.8!important;
+}
+
+// mat-input carent color
+::ng-deep .mat-input-element {
+    caret-color: white!important;
+}
+
+// mat-input error carent color
+::ng-deep .mat-form-field-invalid .mat-input-element, .mat-warn .mat-input-element {
+    caret-color: white!important;
+}
+
+// mat-label normal state style
+::ng-deep .mat-form-field-label {
+    color: white!important;
+    // color: $mainColor!important;
+}
+
+// mat-label focused style
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: white!important;
+}
+
+// mat-label error style
+::ng-deep .mat-form-field.mat-form-field-invalid .mat-form-field-label {
+    color: white!important;
+}
+

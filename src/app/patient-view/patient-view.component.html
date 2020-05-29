@@ -1,0 +1,38 @@
+<mat-dialog-content>
+    <div>
+        <h2 mat-dialog-title class="text-centered fs-16 my-2"><b>{{patientChosen.name}}</b></h2>
+    </div>
+    <mat-tab-group animationDuration="0ms" mat-stretch-tabs [selectedIndex]="1" disableRipple (selectedTabChange)="populateDatasets($event)">
+        <mat-tab label="Evaluaciones"> 
+            <div class="tab-container">
+                <p class="text-centered fs-14 mt-4">Nada en <b>'Evaluaciones'</b></p>
+                <p class="text-centered fs-10 mt-1">Se agregará contenido después</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Datos"> 
+            <div class="tab-container">
+                <p class="text-centered fs-14 mt-4">RUT: {{patientChosen.rut}}</p>
+                <p class="text-centered fs-10 mt-1">Edad: {{patientChosen.age}} años</p>
+                <p class="text-centered fs-10 mt-1">Clasificación: CROHN</p>
+                <p class="text-centered fs-10 mt-1">Se agregará contenido después</p>
+            </div>
+        </mat-tab>
+        <mat-tab label="Evolución">
+            <ng-template matTabContent>
+                <div class="tab-container">
+                    <mat-card>
+                        <mat-card-header class="bg-primary">
+                            <mat-card-title class="text-centered mt-2 c-white">Evolución del paciente</mat-card-title>
+                            <mat-card-subtitle class="text-centered mb-2 c-white">Según cuestionarios HB Corto e IBDQ9</mat-card-subtitle>
+                        </mat-card-header>
+                        <mat-card-content class="text-centered">
+                            <div class="my-4">
+                                <canvas id="myChart" class="m-0-auto" width="700" height="400"></canvas>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </ng-template>
+        </mat-tab>
+      </mat-tab-group>
+</mat-dialog-content>

@@ -1,0 +1,41 @@
+<body>
+<div id="wrapper"></div>
+        <mat-card id="login-form">
+            <div class="flex-container">
+                <form class="example-form" [formGroup] = "loginForm" novalidate (ngSubmit)="onSubmit()">
+                    <div style="text-align:center; margin-bottom:15px;">
+                        <img src="/assets/img/cclogo.png" alt="">
+                    </div>
+                    <div class="welcome-text">
+                        <mat-label>
+                            <mat-card-title class="white-text" style="margin-bottom:40px;">
+                                Acceso para profesionales
+                            </mat-card-title>
+                        </mat-label>
+                    </div>
+                    <div class="flex-container">
+                        <mat-form-field  primary appearance="fill">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput autocomplete="off" formControlName="userEmail">
+                        <mat-error *ngIf="loginForm.get('userEmail').invalid">{{getEmailErrorMessage()}}</mat-error>
+                        <mat-icon matSuffix class="white-text">account_circle</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    
+                    <div>
+                        <mat-form-field  appearance="fill">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="userPassword" class="white-text">
+                        <mat-error *ngIf="loginForm.get('userPassword').invalid">{{getPasswordErrorMessage()}}</mat-error>
+                        <mat-icon class="white-text" matSuffix>vpn_key</mat-icon>
+                        </mat-form-field>
+                    </div>
+                    <div class="login-button-box">
+                        <button type="submit" class="white-text wide-button" [ngClass]="{'button-disabled': !loginForm.valid, 'button-enabled': loginForm.valid}" (click)="logIn()" [disabled]="!loginForm.valid" mat-raised-button>
+                            INICIAR SESIÓN
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </mat-card>
+</body>
