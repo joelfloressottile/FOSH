@@ -1,0 +1,22 @@
+.q1{
+    background-color: #299AF1;
+}
+
+.q1:hover, .q2:hover, .q3:hover{
+    background-color: #303030;
+    transition:0.3s;
+    cursor: pointer;
+}
+
+.q2{
+    background-color: #166EF3;
+}
+
+.q3{
+    background-color: #02528E;
+}
+
+.responsive-img {
+    width: 30%;
+    height: auto;
+  }

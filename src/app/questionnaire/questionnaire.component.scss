@@ -1,0 +1,27 @@
+::ng-deep mat-dialog-content{
+    min-height:90vh;
+    width:80vw;
+    // overflow-y: hidden !important;
+}
+
+.dialog-buttons-footer{
+    width:100%;
+    bottom: 24px;
+}
+
+.button-end{
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+.close-icon{
+    color: red;
+}
+
+.button-greyed{
+    color:lightgray;
+}
+
+.button-ready{
+    color: #4BB543; 
+}

@@ -5,6 +5,8 @@ import { HomeComponent } from './home/home.component';
 import { PatientsComponent } from './patients/patients.component';
 import { MenuComponent } from './menu/menu.component';
 import { StatsComponent } from './stats/stats.component';
+import { PatientViewComponent } from './patient-view/patient-view.component';
+import { PatientHomeComponent } from './patient-home/patient-home.component';
 
 
 const routes: Routes = [
@@ -29,6 +31,10 @@ const routes: Routes = [
         path: 'estadisticas',
         component: StatsComponent
       },
+      {
+        path: 'inicioPaciente',
+        component: PatientHomeComponent
+      }
     ]
   },
   {

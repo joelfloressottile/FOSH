@@ -15,6 +15,8 @@ import { PatientsComponent } from './patients/patients.component';
 import { PatientViewComponent } from './patient-view/patient-view.component';
 import { MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule } from '@angular/material/dialog';
 import { StatsComponent } from './stats/stats.component';
+import { PatientHomeComponent } from './patient-home/patient-home.component';
+import { QuestionnaireComponent } from './questionnaire/questionnaire.component';
 
 
 
@@ -27,9 +29,11 @@ import { StatsComponent } from './stats/stats.component';
     HomeComponent,
     PatientsComponent,
     PatientViewComponent,
-    StatsComponent
+    StatsComponent,
+    PatientHomeComponent,
+    QuestionnaireComponent
   ],
-  entryComponents: [PatientViewComponent],
+  entryComponents: [PatientViewComponent, QuestionnaireComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

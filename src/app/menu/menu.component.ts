@@ -8,9 +8,10 @@ import { Component, OnInit} from '@angular/core';
 export class MenuComponent implements OnInit {
   opened: boolean = false;
   menuNav=[
-    {name:"Inicio",route:"/inicio",icon:"home"},
-    {name:"Pacientes",route:"/pacientes",icon:"person"},
-    {name:"Estadísticas", route:"/estadisticas", icon:"bar_chart"}
+    {name:"Inicio", route:"/inicio",icon:"home"},
+    {name:"Pacientes", route:"/pacientes",icon:"people"},
+    {name:"Estadísticas", route:"/estadisticas", icon:"bar_chart"},
+    {name:"Inicio Paciente", route:"/inicioPaciente", icon:"person"}
   ]
 
   constructor() { }

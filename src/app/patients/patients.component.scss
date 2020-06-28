@@ -1,10 +1,13 @@
 .table-container{
     max-height:500px;
     overflow:auto;
+    border: 1px solid #303030;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 .table-header{
-    background-color:#070A1D;
+    background-color:#303030;
     color: white;
     th{
         color:white;

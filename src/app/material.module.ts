@@ -12,8 +12,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
-
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -31,6 +31,7 @@ import { MatRippleModule } from '@angular/material/core';
         MatTableModule,
         MatDialogModule,
         MatRippleModule,
+        MatToolbarModule,
     ],
     exports: [
         MatInputModule,
@@ -46,6 +47,7 @@ import { MatRippleModule } from '@angular/material/core';
         MatTableModule,
         MatDialogModule,
         MatRippleModule,
+        MatToolbarModule
     ]
 })
 export class MaterialModule {}

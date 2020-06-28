@@ -1,0 +1,15 @@
+<mat-dialog-content class="relative">
+    <mat-toolbar class="dark">
+        <mat-icon color="primary">edit</mat-icon>
+        <span class="ml-1">Cuestionario: {{data.title}} </span>
+        <!-- <button mat-icon-button class="absolute button-end right-1"> -->
+            <mat-icon class="absolute button-end right-1 close-icon" (click)="exitDialog()">close</mat-icon>
+        <!-- </button> -->
+    </mat-toolbar>
+    <p>questionnaire works!</p>
+    <div mat-dialog-actions class="absolute dialog-buttons-footer button-end dark">
+        <button mat-icon-button class="mr-1" [disabled]="!completed">
+            <mat-icon [ngClass]="{'button-greyed': !completed, 'button-ready': completed}" color="primary" class="is-30">check_circle</mat-icon>
+        </button>
+    </div>
+</mat-dialog-content>
