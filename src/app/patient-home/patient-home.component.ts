@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { QuestionnaireComponent } from '../questionnaire/questionnaire.component';
+import { Questions } from '../globals/questions';
 
 @Component({
   selector: 'app-patient-home',
@@ -8,6 +9,7 @@ import { QuestionnaireComponent } from '../questionnaire/questionnaire.component
   styleUrls: ['./patient-home.component.scss']
 })
 export class PatientHomeComponent implements OnInit {
+  questions: any = Questions;
 
   constructor(
     public dialog: MatDialog,
@@ -23,9 +25,9 @@ export class PatientHomeComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     dialogConfig.data = {
-        id: 1,
-        title: '¿Cómo me siento?'
-    };
+      questions: this.questions,
+      title: '¿Cómo me siento?'
+    }
 
     const dialogRef = this.dialog.open(QuestionnaireComponent, dialogConfig);
 

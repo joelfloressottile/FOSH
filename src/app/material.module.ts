@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatRippleModule } from '@angular/material/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatRadioModule } from '@angular/material/radio';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatDialogModule,
         MatRippleModule,
         MatToolbarModule,
+        MatRadioModule,
     ],
     exports: [
         MatInputModule,
@@ -47,7 +49,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
         MatTableModule,
         MatDialogModule,
         MatRippleModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatRadioModule,
     ]
 })
 export class MaterialModule {}

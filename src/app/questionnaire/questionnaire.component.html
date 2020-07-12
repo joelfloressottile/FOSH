@@ -1,15 +1,48 @@
-<mat-dialog-content class="relative">
-    <mat-toolbar class="dark">
-        <mat-icon color="primary">edit</mat-icon>
-        <span class="ml-1">Cuestionario: {{data.title}} </span>
-        <!-- <button mat-icon-button class="absolute button-end right-1"> -->
-            <mat-icon class="absolute button-end right-1 close-icon" (click)="exitDialog()">close</mat-icon>
-        <!-- </button> -->
-    </mat-toolbar>
-    <p>questionnaire works!</p>
-    <div mat-dialog-actions class="absolute dialog-buttons-footer button-end dark">
+<mat-toolbar class="dark relative">
+    <mat-icon color="primary">edit</mat-icon>
+    <span class="ml-1">Cuestionario: {{questionnaire.title}} </span>
+    <!-- <button mat-icon-button class="absolute button-end right-1"> -->
+        <mat-icon class="absolute button-end right-1 close-icon" (click)="exitDialog()">close</mat-icon>
+    <!-- </button> -->
+</mat-toolbar>
+
+<mat-dialog-content class="relative OpenSans">
+    <div class="progress">
+        <p>{{progress}}/{{questionnaire.questions.length}}</p>
+        <p class="mt-1">{{questionnaireSum}}</p>
+    </div>
+    <div class="text-centered mb-2 q-vertical-center w-100">
+        <div class="w-70 m-0-auto">
+            <h1 class="text-left">{{currentQuestion.title}}</h1>
+        </div>
+        <div class="w-50 m-0-auto">
+            <div>
+                <mat-radio-group class="mt-2 radio-group" color="primary" [(ngModel)]="answers[questionIndex]">
+                    <mat-radio-button class="mt-1" *ngFor="let option of currentQuestion.options; let i = index" value={{option.value}} (change)="radioChange($event)">
+                        {{option.title}}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+    </div>
+    <div class="absolute b-3 w-100 m-0-auto text-centered">
+        <button mat-button class="nav-button mx-1" [disabled]="questionIndex==0" [ngClass]="{'nav-button-disabled': questionIndex==0}" (click)="previousQuestion()">
+            Anterior
+        </button>
+        <button mat-button class="nav-button mx-1" [disabled]="questionIndex==questionnaire.questions.length - 1" [ngClass]="{'nav-button-disabled': questionIndex==questionnaire.questions.length - 1 }" (click)="nextQuestion()">
+            Siguiente
+        </button>
+    </div>
+    
+
+    <div class="absolute b-3 r-1">
+        <button mat-button class="nav-button" [disabled]="progress != questionnaire.questions.length" [ngClass]="{'nav-button-disabled': progress != questionnaire.questions.length}">
+            Guardar cuestionario
+        </button> 
+    </div>
+    <!-- <div mat-dialog-actions class="absolute dialog-buttons-footer button-end dark">
         <button mat-icon-button class="mr-1" [disabled]="!completed">
             <mat-icon [ngClass]="{'button-greyed': !completed, 'button-ready': completed}" color="primary" class="is-30">check_circle</mat-icon>
         </button>
-    </div>
+    </div> -->
 </mat-dialog-content>

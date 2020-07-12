@@ -1,7 +1,11 @@
 ::ng-deep mat-dialog-content{
-    min-height:90vh;
-    width:80vw;
+    min-height:60vh;
+    width:40vw;
     // overflow-y: hidden !important;
+}
+
+body{
+    font-family: 'Open Sans';
 }
 
 .dialog-buttons-footer{
@@ -24,4 +28,38 @@
 
 .button-ready{
     color: #4BB543; 
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+
+.nav-button{
+    border-radius: 36px;
+    background: #303030;
+    color: white;
+}
+
+.nav-button-disabled{
+    border-radius: 36px;
+    background: lightgrey;
+    color: white;
+}
+
+.progress{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 35px;
+}
+
+
+.q-vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 40%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
