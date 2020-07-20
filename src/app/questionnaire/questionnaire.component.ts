@@ -9,6 +9,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class QuestionnaireComponent implements OnInit {
   completed: boolean = false;
   questionnaire: any = null;
+  questionnaireInfo: any = null;
+
   progress: number = 0;
   answers: Array<number>;
   currentQuestion: any;
@@ -19,27 +21,32 @@ export class QuestionnaireComponent implements OnInit {
     private dialogRef: MatDialogRef<QuestionnaireComponent>,
         @Inject(MAT_DIALOG_DATA) data
   ) { 
-    this.questionnaire = data;
+    this.questionnaire = data.data;
+    this.questionnaireInfo = data.info;
     console.log('Data received: ', this.questionnaire);
+    console.log('Q Info: ', this.questionnaireInfo);
   }
 
   ngOnInit(): void {
     this.answers = new Array(this.questionnaire.questions.length).fill(0);
     this.currentQuestion = this.questionnaire.questions[0];
-    console.log('Answers: ', this.answers);
   }
 
-  exitDialog(){
-    this.dialogRef.close('Exited');
+  exitDialog(finished){
+    if(finished)
+      this.dialogRef.close(this.questionnaireInfo);
+    else
+      this.dialogRef.close(null);
   }
 
   radioChange(event){
     this.answers[this.questionIndex] = parseInt(event.value);
-    this.answers = this.answers.map(i=>Number(i))
     console.log('Answers: ', this.answers);
+    let sum = 0;
+    this.answers.forEach(a => sum = sum + a);
+    this.questionnaireSum = sum;
+    console.log('Current sum: ', this.questionnaireSum);
     this.progressCheck();
-    this.questionnaireSum = this.answers.reduce((a, b) => a + b)
-    console.log('Q SUM: ', this.questionnaireSum);
   }
 
   previousQuestion(){
@@ -57,8 +64,8 @@ export class QuestionnaireComponent implements OnInit {
   }
 
   progressCheck(){
-    let answered = this.answers.filter( a => a != 0)
-    this.progress = answered.length;
+    this.progress = this.answers.filter( a => a != 0).length;
+    console.log('Current progress: ', this.progress);
   }
 
 }
